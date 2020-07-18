@@ -1,11 +1,13 @@
 # DOMang
-A jquery like library for javascript, which simplifies the manipulation of HTML elements.<br>
+Domang is a library based in jQuery, which intend to simplify the process of selecting and manipulating HTML documents.<br>
 
 ### Functions
 
 <ul>
-  <li>Css functions</li>
-  <li>Html element manipulation</li>
+  <li>Quick selector.</li>
+  <li>Basic CSS operations.</li>
+  <li>Simplified event listeners</li>
 </ul>
 
-###### NOT COMPLETE
+###### Versions
+This is the first useable version. However, DOMang is still a work in progress.
