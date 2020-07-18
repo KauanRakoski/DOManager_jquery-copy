@@ -9,5 +9,5 @@ Domang is a library based in jQuery, which intend to simplify the process of sel
   <li>Simplified event listeners</li>
 </ul>
 
-###### Versions
+##### Versions
 This is the first useable version. However, DOMang is still a work in progress.
