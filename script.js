@@ -16,13 +16,15 @@ var $ = (function(){
 
 
 
+
+
     /* 
         * 'Generic' Methods
     */
     
 
     // For loop function (each)
-    // @desc loops through all elements and applies a function
+    // ? @desc loops through all elements and applies a function
     constructor.prototype.each = function(callback){
         if(!callback || typeof callback !== 'function'){
             throw new Error('Callback does not exist or is not a function.');
@@ -35,7 +37,7 @@ var $ = (function(){
 
 
     // ClassList add method (addClass)
-    // @desc adds a class to the passed element(s)
+    // ? @desc adds a class to the passed element(s)
     constructor.prototype.addClass = function(className){
         this.each(function(item){
             item.classList.add(className)
@@ -45,7 +47,7 @@ var $ = (function(){
 
 
     // ClassList remove method
-    // @desc removes a class name from the passed elements(s)
+    // ? @desc removes a class name from the passed elements(s)
     constructor.prototype.removeClass = function(className){
         this.each(function(item){
             item.classList.remove(className)
@@ -64,7 +66,7 @@ var $ = (function(){
 
 
     // Event handlers
-    // @desc execute the event using a callback function
+    // ? @desc execute the event using a callback function
     constructor.prototype.on = function(eventName, callback){
         this.each(function(item){
             item.addEventListener(eventName, callback)
@@ -74,7 +76,7 @@ var $ = (function(){
 
 
     // Click event handler
-    // @desc returns a callback on click event
+    // ? @desc returns a callback on click event
     constructor.prototype.click = function(callback){
         this.each(function(item){
             item.addEventListener('click', callback)
@@ -83,7 +85,7 @@ var $ = (function(){
 
 
     // Mouseover event handler
-    // @desc handle mouseover event
+    // ? @desc handle mouseover event
     constructor.prototype.mouseOver = function(callback){
         this.each(function(item){
             item.addEventListener('mouseover', callback)
@@ -91,8 +93,10 @@ var $ = (function(){
     };
 
     // Page load check
-    // @desc Check if page is loaded
+    // ? @desc Check if page is loaded
     constructor.prototype.ready = function(callback){
+        if(!callback || typeof callback !== 'function') return;
+
         if(document || window in this.elems){
             window.addEventListener('load', callback)
         }
@@ -110,7 +114,7 @@ var $ = (function(){
 
 
     // Hide method
-    // @desc hide all the selected objects
+    // ? @desc hide all the selected objects
     constructor.prototype.hide = function(){
         this.each(function(item){
             item.style.display = 'none'
@@ -119,7 +123,7 @@ var $ = (function(){
 
 
     // Show method
-    // @desc show all the selected objects
+    // ? @desc show all the selected objects
     constructor.prototype.show = function(){
         this.each(function(item){
             item.style.display = 'block'
@@ -128,7 +132,7 @@ var $ = (function(){
 
 
     // Customize the style using css
-    // @desc set the property to a passed value
+    // ? @desc set the property to a passed value
     // Unfinished
     constructor.prototype.css = function(property, value){
         this.each(function(item){
@@ -138,23 +142,58 @@ var $ = (function(){
 
 
 
+    /* 
+    Animations 
+    */
+
+    constructor.prototype.rawReveal = function(){
+        this.each(function(item){
+            item.style.opacity = 0;
+                       
+
+            let observer, options;
+
+            options = {
+                root: null,
+                rootMargin: "0px",
+                treshold: 0,
+            };
+    
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(!entry.isIntersecting) return;
+                    entry.target.style.transition = 'opacity 1000ms ease-in-out'
+                    entry.target.style.opacity = 1;
+                    observer.unobserve(entry.target)
+                });
+            }, options);
+
+            observer.observe(item);
+        });
+
+        
+
+    }
+
+
+
 
     /*
         * Proprierties
     */
 
     // SetSize method
-    // @desc set the size of elements based on pixel values.
+    // ? @desc set the size of elements based on given values and unities.
     constructor.prototype.setSize = function(res_x, res_y){
         this.each(function(item){
-            item.style.width = `${res_x}px`;
-            item.style.height = `${res_y}px`;
+            item.style.width = `${res_x}`;
+            item.style.height = `${res_y}`;
         });
         return this;
     };
 
     // Resize method
-    // @desc resizes the element using x and y values
+    // ? @desc resizes the element using x and y values
     constructor.prototype.resize = function(res_x, res_y){
         this.each(function(item){
             item.style.transform = (`scale(${res_x}, ${res_y})`);
@@ -171,13 +210,11 @@ var $ = (function(){
         ! Not working properly
     */
    
-    constructor.prototype.val = function(value){
+    constructor.prototype.val = function(val){
         this.each(function(item){
-            if(!value) return item.innerText;
-
-            item.value = value;
-        });
-        return this; 
+            let v = document.querySelector(item);
+            return v.value;
+        })
     };
 
 
@@ -188,7 +225,7 @@ var $ = (function(){
 
 
     // Ajax method
-    // @desc logs the requested url, for now
+    // ? @desc logs the requested url, for now
     constructor.prototype.ajax = function(url){
         console.log(url)
     }; 
@@ -197,7 +234,7 @@ var $ = (function(){
     
     /* 
     *Instance method
-    @desc intanciate the class, making desnecessary the use of "new" 
+    ?@desc intanciate the class, making desnecessary the use of "new" 
     */
 
     var instantiate = function(selector){
@@ -214,4 +251,5 @@ var $ = (function(){
 // ? @Version 1.0.2
 // ! Author: Kauan Rakoski
 // ! [CodePaqter] project
+
 // CodePaqter is a false startup (all content free), which I created to make projects and learn programming. It is not online yet.
