@@ -2,7 +2,7 @@
 Domang is a library based in jQuery, which intend to simplify the process of selecting and manipulating HTML documents.<br>
 
 ### About
-Using the familiar jQuery dollar sign ($), easily manipulate, create and animate elements using DOMang, a light, easy and quick javascript library.
+Using the familiar jQuery dollar sign ($), easily manipulate, create and animate elements using DOMang, a lightweight, easy and fast javascript library.
 
 #### Functions
 
@@ -17,11 +17,13 @@ Using the familiar jQuery dollar sign ($), easily manipulate, create and animate
 ### Usage
 You can use DOMang by the CDN link:
 
+#### CDN link
 ```html
-<script src="https://rawcdn.githack.com/KauanRakoski/DOMang/27df019bf8153528820a685a168628ecf03c7a3a/script.js"></script>
+<script src="https://rawcdn.githack.com/KauanRakoski/DOMang/5842d8107474c0ca24c20da3a378832f8aa876f8/script.js"></script>
 ```
 
-Or you can install it running the command:
+#### NPM installation
+Or you can install it running the command - we are working on this. Use the CDN link instead.-:
 
 ```
 npm install domang
@@ -32,7 +34,8 @@ And then import it:
 import $ from 'domang';
 ```
 
-And then you can start writing code:
+## Getting started
+After that, you are able to start coding. Code example:
 ```javascript
   $('document').ready(function(){
             $('.someItem').resize(3, 1);
@@ -51,5 +54,7 @@ And then you can start writing code:
 
 
 ### Version
-V - 1.1.1 <br>
-Minor changes and improvements. Bug correction
+V - 1.1.2 <br>
+**Last updates** <br>
+Minor changes and improvements. <br>
+Bug correction.
