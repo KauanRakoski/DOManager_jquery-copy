@@ -75,9 +75,10 @@ If you are a developer and want to contribute, read the following lines:
 
 ### Task list
 If you want to contribute, you can do anything you want if it is useful. Urgent tasks are:
--[ ] State managing methods - toogle methods for example.
--[ ] Create static and scroll animate methods.
--[ ] Create a "design system" - a logical repo organization.
+
+- [ ] State managing methods - toogle methods for example.
+- [ ] Create static and scroll animate methods.
+- [ ] Create a "design system" - a logical repo organization.
 
 ## How to Contribute
 First, you need to fork the repository. Then, you can clone it to yout local machine:
