@@ -1,20 +1,23 @@
+
+![Logo](assets/domanglogo.svg)
+
 # DOMang
-Domang is a library based in jQuery, which intend to simplify the process of selecting and manipulating HTML documents.<br>
+
+- [Usage](#usage)
+- [Contribute](#contribute)
 
 ### About
 Using the familiar jQuery dollar sign ($), easily manipulate, create and animate elements using DOMang, a lightweight, easy and fast javascript library.
 
 #### Functions
 
-<ul>
-  <li>Quick selector ($).</li>
-  <li>Basic CSS operations (addclass, removeclass).</li>
-  <li>Simplified event listeners (on, click, ...).</li>
-  <li>Animations (ex.: quick intersection observers)</li>
-  <li>And much more...</li>
-</ul>
+- Quick selector ($).
+- Basic CSS operations (addclass, removeclass).
+- Simplified event listeners (on, click, ...).
+- Animations (ex.: quick intersection observers)
+- And much more...
 
-### Usage
+### usage
 You can use DOMang by the CDN link:
 
 #### CDN link
@@ -23,7 +26,7 @@ You can use DOMang by the CDN link:
 ```
 
 #### NPM installation
-Or you can install it running the command - we are working on this. Use the CDN link instead.-:
+Or you can install it running the command - we are working on this. Use the CDN link instead. :/ :
 
 ```
 npm install domang
@@ -54,7 +57,32 @@ After that, you are able to start coding. Code example:
 
 
 ### Version
-V - 1.1.2 <br>
-**Last updates** <br>
-Minor changes and improvements. <br>
+V - 1.1.2 
+
+**Last updates** 
+
+Minor changes and improvements. 
+
 Bug correction.
+
+# contribute
+If you are a developer and want to contribute, read the following lines:
+
+## What is domang purpose
+- Make development easier.
+- Simplify boring tasks.
+- Make hard stuff easier.
+
+### Task list
+If you want to contribute, you can do anything you want if it is useful. Urgent tasks are:
+-[] State managing methods - toogle methods for example.
+-[] Create static and scroll animate methods.
+-[] Create a "design system" - a logical repo organization.
+
+## How to Contribute
+First, you need to fork the repository. Then, you can clone it to yout local machine:
+
+```bash
+$ git clone https://github.com/your-username/DOMang
+```
+After that, you can start working and, when everything is done, you can make a pull request.
