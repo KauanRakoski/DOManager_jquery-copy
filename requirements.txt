@@ -1,0 +1,3 @@
+In the build of domang we used:
+
+- Better comments (VScode extension).
