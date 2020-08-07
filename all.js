@@ -55,6 +55,19 @@ var $ = (function(){
         return this
     };
 
+    // Toogle class method
+    // ? Toogles the class of an item.
+    constructor.prototype.toogleClass = function(className){
+        this.each (function(item){
+            if (item.classList.contains(className)){
+                item.classList.remove(className);
+            }
+            else {
+                item.classList.add(className);
+            }
+        });
+        return this;
+    }
 
 
 
@@ -119,6 +132,7 @@ var $ = (function(){
         this.each(function(item){
             item.style.display = 'none'
         });
+        return this;
     };
 
 
@@ -128,8 +142,17 @@ var $ = (function(){
         this.each(function(item){
             item.style.display = 'block'
         });
+        return this;
     };
 
+    // toogleShow method
+    constructor.prototype.toogleShow = function(){
+        this.each(function(item){
+            if (item.style.display != 'none') item.style.display = 'none';
+            
+            item.style.display = 'block';
+        })
+    }
 
     // Customize the style using css
     // ? @desc set the property to a passed value
