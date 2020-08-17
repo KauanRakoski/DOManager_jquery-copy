@@ -1,6 +1,6 @@
 {
   "name": "domang",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A simple javascript library which makes the manipulation of HTML elements easier",
   "main": "script.js",
   "scripts": {
