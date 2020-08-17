@@ -207,7 +207,7 @@ var $ = (function(){
         return this;
     }
 
-    constructor.prototype.xreveal = function(obj){
+    constructor.prototype.reveal = function(obj){
         this.each(function(item){           
             let observer, options, option;
 
@@ -219,7 +219,7 @@ var $ = (function(){
                     y(object, quantity){
                         return object.style.transform = `translateY(${quantity + "px"})`
                     }
-                    
+
             }
         
             item.style.transition = `transform 300ms ease-in-out`

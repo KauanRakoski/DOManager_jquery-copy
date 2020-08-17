@@ -34,7 +34,7 @@ npm install domang
 
 And then import it:
 ```javascript
-import $ from 'domang';
+import $ from 'path/domang';
 ```
 
 ## Getting started
@@ -51,7 +51,7 @@ After that, you are able to start coding. Code example:
                 $('.someItem').css('background-color', 'white');
             })
 
-            $('.someOtherItem').rawReveal() <-- creates a simple intersection observer
+            $('.someOtherItem').reveal({x: 400, y: 300}) <-- creates a simple intersection observer
         })
 ```
 
@@ -71,7 +71,7 @@ If you are a developer and want to contribute, read the following lines:
 ## What is domang purpose
 - Make development easier.
 - Simplify boring tasks.
-- Make hard stuff easier.
+- Make hard stuff easy.
 
 ### Task list
 If you want to contribute, you can do anything you want if it is useful. Urgent tasks are:
