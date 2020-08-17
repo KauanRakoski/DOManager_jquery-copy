@@ -94,6 +94,7 @@ var $ = (function(){
         this.each(function(item){
             item.addEventListener('click', callback)
         });
+        return this;
     };
 
 
@@ -103,6 +104,7 @@ var $ = (function(){
         this.each(function(item){
             item.addEventListener('mouseover', callback)
         });
+        return this;
     };
 
     // Page load check
@@ -114,6 +116,8 @@ var $ = (function(){
             window.addEventListener('load', callback)
         }
         else throw new Error('INVALID SELECTOR ERROR: the selector is not set to document or window');
+
+        return this;
     };
 
 
@@ -146,12 +150,13 @@ var $ = (function(){
     };
 
     // toogleShow method
-    constructor.prototype.toogleShow = function(){
+    constructor.prototype.visibility = function(){
         this.each(function(item){
             if (item.style.display != 'none') item.style.display = 'none';
             
-            item.style.display = 'block';
+            else item.style.display = 'block';
         })
+        return this;
     }
 
     // Customize the style using css
@@ -161,6 +166,7 @@ var $ = (function(){
         this.each(function(item){
             item.style[property] = value;
         })
+        return this;
     };
 
 
@@ -171,7 +177,7 @@ var $ = (function(){
 
     // RawReval methods
     // @desc creates a very simple intersection observer
-    constructor.prototype.rawReveal = function(duration){
+    constructor.prototype.rawReveal = function({duration, x}){
         this.each(function(item){
             item.style.opacity = 0;
                        
@@ -188,7 +194,8 @@ var $ = (function(){
                 entries.forEach(entry => {
                     if(!entry.isIntersecting) return;
                     
-                    entry.target.style.transition = `opacity ${duration ? duration : 1000}ms ease-in-out`
+                    entry.target.style.transition = `opacity ${duration ? duration : 1000}ms ease-in-out`;
+                    
                     entry.target.style.opacity = 1;
 
                     observer.unobserve(entry.target);
@@ -197,9 +204,50 @@ var $ = (function(){
 
             observer.observe(item);
         });
+        return this;
+    }
+
+    constructor.prototype.xreveal = function(obj){
+        this.each(function(item){           
+            let observer, options, option;
 
         
+                const binops = {
+                    x(object, quantity){
+                        return object.style.transform = `translateX(${quantity + "px"})`    
+                    },
+                    y(object, quantity){
+                        return object.style.transform = `translateY(${quantity + "px"})`
+                    }
+                    
+            }
+        
+            item.style.transition = `transform 300ms ease-in-out`
 
+            options = {
+                root: null,
+                rootMargin: "0px",
+                treshold: 0.4,
+            };
+    
+            observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(!entry.isIntersecting) return;
+                    
+                    for(option in obj){
+                        let ops = binops[option]
+                        
+                        ops(entry.target, obj[option])
+                    }
+                    
+
+                    observer.unobserve(entry.target);
+                });
+            }, options);
+
+            observer.observe(item);
+        });
+        return this;
     }
 
 
@@ -243,28 +291,15 @@ var $ = (function(){
         
         var rtarget = document.getElementById(targetID)
 
-        if(valueSetter){
-            rtarget.value = valueSetter;
-        }else{
-            return rtarget.value;
-        }
+        if(valueSetter) rtarget.value = valueSetter;
+        else return rtarget.value;
+        
+        return this;
     };
 
 
     /* 
-    * Ajax and other methods. Coming soon.
-    */
-
-
-
-    // Ajax method
-    // ? @desc logs the requested url, for now
-    constructor.prototype.ajax = function(url){
-        console.log(url)
-    }; 
-
-
-    
+        
     /* 
     *Instance method
     ?@desc intanciate the class, making desnecessary the use of "new" 
