@@ -1,4 +1,4 @@
-var $ = (function(){
+const $ = (function(){
     'use strict';
 
     console.log('%cUsing DOMang (V1)', 'background-color: #2dc437; padding: 20px; color: #FFFFFF')
@@ -313,6 +313,8 @@ var $ = (function(){
 
     
 })();
+
+export default $;
 
 
 
