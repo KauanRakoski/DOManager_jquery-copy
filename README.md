@@ -1,6 +1,6 @@
 # Scrooge
 
-<p align="center">![Logo](assets/UIHere.svg)</p>
+<p align="center">![Logo](assets/UIHere.png)</p>
 
 - [Usage](#usage)
 - [Contribute](#contribute)
