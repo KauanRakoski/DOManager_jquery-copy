@@ -1,7 +1,6 @@
+# Scrooge
 
-![Logo](assets/domanglogo.svg)
-
-# DOMang
+<p align="center">![Logo](assets/UIHere.svg)</p>
 
 - [Usage](#usage)
 - [Contribute](#contribute)
@@ -26,7 +25,7 @@ You can use DOMang by the CDN link:
 ```
 
 #### NPM installation
-Or you can install it running the command - we are working on this. Use the CDN link instead. :/ :
+Or you can install it running the command -:
 
 ```
 npm install domang
@@ -34,7 +33,7 @@ npm install domang
 
 And then import it:
 ```javascript
-import $ from 'path/domang';
+import $ from 'domang';
 ```
 
 ## Getting started
@@ -71,19 +70,20 @@ If you are a developer and want to contribute, read the following lines:
 ## What is domang purpose
 - Make development easier.
 - Simplify boring tasks.
-- Make hard stuff easy.
 
 ### Task list
 If you want to contribute, you can do anything you want if it is useful. Urgent tasks are:
 
 - [ ] State managing methods - toogle methods for example.
-- [ ] Create static and scroll animate methods.
+- [ ] Create static and dynamic animate methods.
 - [ ] Create a "design system" - a logical repo organization.
 
 ## How to Contribute
+If you have never done a pull request, I recommend checking out [first-contributions](https://github.com/firstcontributions/first-contributions);
+
 First, you need to fork the repository. Then, you can clone it to yout local machine:
 
 ```bash
 $ git clone https://github.com/your-username/DOMang
 ```
-After that, you can start working and, when everything is done, you can make a pull request.
+Create another branch and start working on it. After done, push it to your github repository and then create a pull request.
