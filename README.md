@@ -38,7 +38,7 @@ After that, you are able to start coding. Code example:
                 $('.someItem').css('background-color', 'white');
             })
 
-            $('.someOtherItem').reveal({x: 400, y: 300}) <-- creates a simple intersection observer
+            $('.someOtherItem').reveal() <-- creates a simple intersection observer
         })
 ```
 
@@ -53,7 +53,7 @@ Minor changes and improvements.
 Bug correction.
 
 # contribute
-Contribution is very appreciated. Feel free to fork and create a pull request, or open an issue. A "good firt issue" would be to make the code of "reveal" function cleaner and fix the issue of executing just one parameter.
+Contribution is very appreciated. Feel free to fork and create a pull request, or open an issue.
 
 ------
 Made with ❤️ and javascript.
