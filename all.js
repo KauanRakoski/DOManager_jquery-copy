@@ -179,21 +179,7 @@ const $ = (function () {
         this.each(function (item) {
             let observer, options, option;
             item.style.transition = `transform 300ms ease-in-out`;
-            
-            const binops = {
-                x(object, quantity) {
-                    object.style.transform = `translateX(${quantity + "px"})`;
-                    return object
-                },
-                y(object, quantity) {
-                    object.style.transform = `translateY(${quantity + "px"})`;
-                    return object;
-                },
-                opacity(object, quantity) {
-                    object.style.opacity = 0;
-
-                }
-            }
+            item.style.opacity = 0;
 
             options = {
                 root: null,
@@ -204,13 +190,7 @@ const $ = (function () {
             observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
-
-                    for (option in obj) {
-                        setTimeout(() => {
-                            let ops = binops[option]
-                            ops(entry.target, obj[option])
-                        }, 300)
-                    }
+                    entry.target.style.opacity = 1;
                     observer.unobserve(entry.target);
                 });
             }, options);
@@ -288,10 +268,5 @@ const $ = (function () {
 
 
 
-// ? @Version 1.0.2
-// ! Author: Kauan Rakoski
-// ! [CodePaqter] project
-
-// CodePaqter is a false startup (all content free), which I created to make projects and learn programming. It is not online yet.
 
 
