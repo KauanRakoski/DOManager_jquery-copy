@@ -1,12 +1,14 @@
 <h1 align="center">Scrooge</h1>
+
+
+<p align="center"><img src="./assets/UIHere.png"/></p>
+
 <p align="center">
   <img src="https://badge.fury.io/js/scroooge.svg"> &nbsp; 
   <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"> &nbsp; 
   <img src="http://hits.dwyl.com/kauanrakoski/scrooge.svg"> &nbsp; 
   <img src="https://img.shields.io/npm/dm/scroooge.svg">
 </p>
-
-<p align="center"><img src="./assets/UIHere.png"/></p>
 
 - [Usage](#usage)
 - [Contribute](#contribute)
