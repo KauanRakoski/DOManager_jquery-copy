@@ -21,9 +21,13 @@ You can use scrooge by the CDN link:
 
 #### CDN link
 ```html
-<script src="https://rawcdn.githack.com/KauanRakoski/DOMang/5842d8107474c0ca24c20da3a378832f8aa876f8/script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/KauanRakoski/Scrooge/all.js"></script>
 ```
 
+#### NPM package
+```bash
+npm install scroooge
+```
 ## Getting started
 After that, you are able to start coding. Code example:
 ```javascript
