@@ -54,7 +54,7 @@ After that, you are able to start coding. Code example:
 
 
 ### Version
-V - 1.1.2 
+V - 1.1.6 
 
 **Last updates** 
 
